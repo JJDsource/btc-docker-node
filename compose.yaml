@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  bitcoind:
+    image: bitcoind
+    container_name: bitcoind
+    build:
+      context: ./bitcoind
+      dockerfile: Dockerfile
+    volumes:
+      - './volumes/bitcoind-volume:/bitcoin/.bitcoin'
+    ports: 
+      - 8333:8333
+      - 8332:8332
